@@ -24,19 +24,20 @@ module.exports = () => {
       }),
 
       new GenerateSW(),
+      new InjectManifest({
+        swSrc: './src-sw.js'
+      }),
       new WebpackPwaManifest({
         name: 'Text Editor',
         short_name: 'Text Editor',
         description: 'A text editor for editing text!',
-        background_color: '',
-        theme_color: '',
         start_url: './',
         publicPath: './',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
-            destination: path.join('src', 'icons')
+            destination: path.join('assets', 'icons')
           }
         ]      
       })
