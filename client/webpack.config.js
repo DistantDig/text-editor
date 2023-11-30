@@ -28,6 +28,8 @@ module.exports = () => {
         swSrc: './src-sw.js'
       }),
       new WebpackPwaManifest({
+        inject: true,
+        fingerprints: false,
         name: 'Text Editor',
         short_name: 'Text Editor',
         description: 'A text editor for editing text!',
